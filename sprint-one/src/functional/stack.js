@@ -7,18 +7,18 @@ var Stack = function(){
 
   // Implement the methods below
   someInstance.push = function(value){
-    storage.num = value;
     num++;
-    console.log(storage.num);
+    storage[num] = value;
   };
 
   someInstance.pop = function(){
     if (num > 0) {
-      // Store storage.num key in new popped variable
-      var popped = storage.num;
+      // Store storage[num] key in new popped variable
+      var popped = storage[num];
 
       // Remove storage[num] from storage
-      delete storage.num;
+      
+      delete storage[num];
 
       // Decrement num variable
       num--;
