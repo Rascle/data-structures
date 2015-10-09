@@ -1,7 +1,7 @@
 var Queue = function(){
   var someInstance = {};
   var num = 0;
-  var frontNum = 1; 
+  var frontNum = 0; 
 
   // Use an object with frontNumeric keys to store values
   var storage = {};
@@ -9,17 +9,17 @@ var Queue = function(){
   // Implement the methods below
 
   someInstance.enqueue = function(value){
-    num++;
     storage[num] = value;
+    num++;
   };
 
   someInstance.dequeue = function(){
-    if ( someInstance.size() > 0 ) {  //does this need to change?
+    if ( num > frontNum ) {  
       //store storage[frontNum] in variable
       var dequeued = storage[frontNum];
-      frontNum++;
       delete storage[frontNum];
-      
+      frontNum++;
+      return dequeued;
     }
   };
 
