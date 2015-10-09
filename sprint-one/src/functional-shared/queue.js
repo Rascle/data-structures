@@ -17,10 +17,14 @@ queueMethods.enqueue = function(val) {
 };
 
 queueMethods.dequeue = function() {
-
+  if (this.num > this.frontNum) { 
+    this.frontNum++;
+    var dequeued = this.storage[this.frontNum];
+    delete this.storage[this.frontNum];
+    return dequeued;
+  }
 };
 
 queueMethods.size = function() {
-  return this.storage[this.num] - this.storage[this.frontNum];
+  return this.num - this.frontNum;
 };
-
