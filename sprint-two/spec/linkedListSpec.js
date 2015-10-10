@@ -58,6 +58,7 @@ describe('linkedList', function() {
     expect(linkedList.head.next.value).to.equal(linkedList.tail.value);
     // linkedList.addToTail(6);
     // expect(linkedList.head.value).to.equal(4);
+    // console.log("this is head" + linkedList.head);
     // expect(linkedList.head.next.next.value).to.equal(6);
     //check if list.head.next.next is equal to list.tail
   });

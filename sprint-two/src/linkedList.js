@@ -11,6 +11,7 @@ var LinkedList = function(){
       list.head.next = Node(value);
       list.tail = list.head.next;
     } else {
+      // var newNode = Node(value) having a variable for newNode at beginnning of function
       list.tail.next = Node(value);
       list.tail = tail.next.next;
     }
