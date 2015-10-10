@@ -52,4 +52,13 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('should reference new node when addToTail is called', function() {
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    expect(linkedList.head.next.value).to.equal(linkedList.tail.value);
+    // linkedList.addToTail(6);
+    // expect(linkedList.head.value).to.equal(4);
+    // expect(linkedList.head.next.next.value).to.equal(6);
+    //check if list.head.next.next is equal to list.tail
+  });
 });
