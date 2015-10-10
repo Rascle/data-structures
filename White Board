@@ -1,0 +1,45 @@
+tree.js
+
+inputs - values, targets
+output - new Tree/nodes, boolean (for contains), values
+
+Instantiate a new Tree
+  tree has a value
+  tree has a storage array for it's children
+  tree has methods
+    add child with an input value as a child of tree in tree's child storage
+      create a new Tree node with the input value and all properties of Tree and store that
+    checks all children of a node for a target input value (returns a boolean value)
+      checks all children's children for input value recursively
+      first checks the node where methods was called
+        then checks each child for target
+        then it runs the method on each child
+          first checks node where method was called again etc. etc.
+
+graph.js
+
+Creating a graph only adds the methods
+  Adding a node oject
+    create a storage for a value
+    create a storage for edges (connections)
+      edge is each connection made between nodes
+  iterate over each node in graph
+    _.each on each node??
+  check if graph contains a target .contains(target)
+    iterate through the entire graph object
+      iterate over each node
+        check each node's value to see if it is equal to target
+          if true, set result to true
+  add an edge to a node (linking the nodes to reference each other)
+    add a reference of target node to called node and vice versa
+  check if a node has a target edge
+  remove a node from the graph
+    first remove all edge references of node
+      call removeEdge method
+    remove the node
+  remove edge
+    run hasEdge on each node
+    if it has it, remove it
+
+cat's edges [horse, dog, mouse] // iterate over cat's array, check to see if it has dog
+dog's edges [cat, mouse, duck]

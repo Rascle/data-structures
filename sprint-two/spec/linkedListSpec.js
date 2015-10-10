@@ -56,7 +56,7 @@ describe('linkedList', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);
     expect(linkedList.head.next.value).to.equal(linkedList.tail.value);
-    // linkedList.addToTail(6);
+    // linkedList.addToTail(6);   THIS IS WHAT IS BROKEN!
     // expect(linkedList.head.value).to.equal(4);
     // console.log("this is head" + linkedList.head);
     // expect(linkedList.head.next.next.value).to.equal(6);
