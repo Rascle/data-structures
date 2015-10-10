@@ -25,13 +25,20 @@ treeMethods.addChild = function(value){
 //takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
 treeMethods.contains = function(target){  
   var result = false;
-  if ( this.children[0].value === target ) {
-    result = true;
-  }
+  _.each(this.children, function(child){
+    if ( child.value === target ) {
+      result = true;
+    }
+    //then it runs the .contains for each child
+    //since each won't return anything, running simply .contains inside the loop won't return the boolean
+    if( child.contains(target) === true ) {
+      result = true;
+    }
+   });
+
   return result;
   //we already added one node with the value of 5, where is it? INSIDE "node" object, its node.value
   //how do we make this function return true when you pass in the target of 5 to contains?
-
 };
 
 
