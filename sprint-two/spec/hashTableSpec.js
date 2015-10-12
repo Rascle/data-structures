@@ -38,8 +38,8 @@ describe('hashTable', function() {
   it('should handle hash function collisions', function(){
     var v1 = "val1";
     var v2 = "val2";
-    var oldHashFunction = window.getIndexBelowMaxForKey;
-    window.getIndexBelowMaxForKey = function() { return 0; };
+    var oldHashFunction = window.getIndexBelowMaxForKey; //sets the old hash function to global object...not sure why
+    window.getIndexBelowMaxForKey = function() { return 0; }; //chnages the old hash function to return 0...not sure why
     hashTable.insert(v1, v1);
     hashTable.insert(v2, v2);
     expect(hashTable.retrieve(v1)).to.equal(v1);
